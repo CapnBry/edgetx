@@ -1,0 +1,4 @@
+execute_process(COMMAND ${CMAKE_MAKE_PROGRAM} DESTDIR=${CPACK_PACKAGE_DIRECTORY}/_CPack_Packages/Linux/External/AppImage install
+                WORKING_DIRECTORY ${CMAKE_BINARY_DIR})
+execute_process(COMMAND env QMAKE=${QT_QMAKE_EXECUTABLE} ${LINUXDEPLOY_EXECUTABLE} ${CPACK_PACKAGE_DIRECTORY}/_CPack_Packages/Linux/External/AppImage${CMAKE_INSTALL_PREFIX}/share/applications/${COMPANION_NAME}.desktop -appimage
+                WORKING_DIRECTORY ${CPACK_PACKAGE_DIRECTORY})
